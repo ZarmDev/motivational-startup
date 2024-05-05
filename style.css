@@ -1,0 +1,11 @@
+body {
+    width: 98vw;
+}
+
+#content {
+    border: solid black 2px;
+    border-style: dotted;
+    height: 100vh;
+    padding: 0.1vw;
+    overflow-y: auto;
+}
