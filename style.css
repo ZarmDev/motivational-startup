@@ -5,7 +5,7 @@ body {
 #content {
     border: solid black 2px;
     border-style: dotted;
-    height: 100vh;
+    height: 90vh;
     padding: 0.1vw;
     overflow-y: auto;
 }
