@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-const content = document.getElementById('mscontent');
+const content = document.getElementById('content');
 if (localStorage.getItem('mscontent') == null) {
     localStorage.setItem('mscontent', '')
     content.innerHTML = 'Get started here!'
