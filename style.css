@@ -9,3 +9,50 @@ body {
     padding: 0.1vw;
     overflow-y: auto;
 }
+
+.ql-editor>* {
+    font-size: 20px !important;
+    padding: 10px !important;
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+}
+
+.ql-toolbar {
+    background-color: white;
+}
+
+.ql-snow {
+    .ql-picker {
+        &.ql-size {
+
+            .ql-picker-label,
+            .ql-picker-item {
+                &::before {
+                    content: attr(data-value) !important;
+                }
+            }
+        }
+    }
+}
+
+/* https://stackoverflow.com/users/5551593/andrew in https://stackoverflow.com/questions/38623716/how-to-add-custom-font-sizes-to-quilljs-editor */
+.ql-color .ql-picker-options [data-value=custom-color] {
+    background: none !important;
+    width: 100% !important;
+    height: 20px !important;
+    text-align: center;
+}
+
+/* https://stackoverflow.com/questions/43728080/how-to-add-font-types-on-quill-js-with-toolbar-options */
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value]::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value]::before {
+    content: attr(data-value) !important;
+}
+
+.ql-color .ql-picker-options [data-value=custom-color]:before {
+    content: 'Custom Color';
+}
+
+.ql-color .ql-picker-options [data-value=custom-color]:hover {
+    border-color: transparent !important;
+}
