@@ -1,5 +1,12 @@
 body {
     width: 98vw;
+    transition: 0.5s;
+}
+
+@media only screen and (max-width: 800px) {
+    #floating {
+        display: none !important;
+    }
 }
 
 #content {
@@ -55,4 +62,30 @@ body {
 
 .ql-color .ql-picker-options [data-value=custom-color]:hover {
     border-color: transparent !important;
+}
+
+#floating {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    opacity: 0.9;
+    top: 2px;
+    left: 80vw;
+    gap: 20px;
+    z-index: 5;
+}
+
+button {
+    padding: 0.5ch;
+    border-radius: 5px;
+    /* background-color: rgb(240, 248, 255); */
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 2ch;
+    border: solid black 2px;
+    cursor: pointer;
+    transition: 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+button:hover {
+    background-color: rgba(255, 166, 0, 0.404);
 }

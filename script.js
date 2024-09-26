@@ -52,15 +52,38 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 });
 
+var template = '<p><br></p><p><strong style="font-size: 32px;">CHECK EVERYDAY:</strong></p><p><span style="font-size: 16px; font-family: &quot;Times New Roman&quot;;">🏅I will be better than ____________ (mention people you compete against! it really helps to motivate you)</span></p><p><strong style="font-size: 14px;">Remember to study in the morning</strong></p><p><br></p><p><strong style="font-size: 32px;">PRIORITIES FOR TODAY:</strong></p><ol><li data-list="ordered"><span class="ql-ui" contenteditable="false"></span><br></li></ol><p><br></p><p><strong style="font-size: 32px;">DO LATER:</strong></p><ol><li data-list="ordered"><span class="ql-ui" contenteditable="false"></span><br></li></ol><p><br></p><p><strong style="font-size: 32px;">TESTS COMING UP:</strong></p><ol><li data-list="ordered"><span class="ql-ui" contenteditable="false"></span><br></li></ol><p><br></p><p><strong style="font-size: 32px;">NOTES: (put any notes that help you study)</strong></p><p>Just <strong>put music</strong> and have fun studying!</p>';
 
-const content = document.getElementById('content');
-if (localStorage.getItem('mscontent') == null) {
-    localStorage.setItem('mscontent', '')
-    content.innerHTML = 'Get started here!'
-} else {
-    content.innerHTML = localStorage.getItem('mscontent')
+window.onload = function () {
+    const content = document.getElementsByClassName('ql-editor')[0];
+    if (localStorage.getItem('mscontent') == null) {
+        localStorage.setItem('mscontent', '')
+        content.innerHTML = template
+    } else {
+        content.innerHTML = localStorage.getItem('mscontent')
+    }
+
+    setInterval(() => {
+        localStorage.setItem('mscontent', content.innerHTML)
+    }, 1000);
 }
 
-setInterval(() => {
-    localStorage.setItem('mscontent', content.innerHTML)
-}, 1000)
+// const addToStreak = document.getElementById('addToStreak');
+// const streak = document.getElementById('streak')
+
+// if (localStorage.getItem('streak') == null) {
+//     localStorage.setItem('streak', '0')
+// }
+
+// streak.innerHTML = `Streak: ${localStorage.getItem('streak')}`
+
+// addToStreak.addEventListener('click', function () {
+//     const d = new Date().toUTCString().slice(0, 16)
+//     if (d == localStorage.getItem('lastUpdatedStreak')) {
+//         alert('Already added to streak... Wait until tommorow.')
+//         return
+//     }
+//     localStorage.setItem('streak', Number(localStorage.getItem('streak')) + 1)
+//     localStorage.setItem('lastUpdatedStreak', d)
+//     streak.innerHTML = `Streak: ${localStorage.getItem('streak')}`
+// })
